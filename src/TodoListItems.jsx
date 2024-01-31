@@ -1,14 +1,11 @@
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext";
 import PropTypes from "prop-types";
 
 const TodoListItems = ({ todos, setTodos }) => {
+  const { theme, updateTheme } = useContext(ThemeContext);
+
   const handleToDoFinished = (index) => {
-    // const arrOne = todos.slice(0, index);
-    // const arrTwo = todos.slice(index+ 1);
-
-    // todos[index].isCompleted = false;
-
-    // setTodos([...arrOne, ...arrTwo])
-
     const updatedTodo = todos[index];
     updatedTodo.isCompleted = !updatedTodo.isCompleted;
 
@@ -18,9 +15,18 @@ const TodoListItems = ({ todos, setTodos }) => {
     setTodos([...arrOne, updatedTodo, ...arrTwo]);
   };
 
+  const lightTheme = {
+    backgroundColor: "white",
+  };
+
+  const darkTheme = {
+    backgroundColor: "black",
+  };
+
   return (
-    <div>
+    <div style={theme === "dark" ? darkTheme : lightTheme}>
       <h2>Not Yet Completed</h2>
+      <button onClick={() => updateTheme()}>Change Theme</button>
       <ul>
         {todos.map((todo, index) => {
           if (todo.isCompleted === false) {
