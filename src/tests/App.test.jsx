@@ -3,12 +3,6 @@ import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../App";
 
-describe("Todo List Tests", () => {
-  it("should work", () => {
-    expect(2 + 2).toStrictEqual(4);
-  });
-});
-
 describe("Todo List App Tests", () => {
   it("should render component", () => {
     render(<App />);

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "./context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import PropTypes from "prop-types";
 
 const TodoListItems = ({ todos, setTodos }) => {
