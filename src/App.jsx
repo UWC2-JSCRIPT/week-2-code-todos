@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, updateTheme }}>
+      <ThemeContext.Provider value={{ theme, updateTheme }}>
       <TodoApp />
     </ThemeContext.Provider>
   );
