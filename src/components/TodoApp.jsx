@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../App.css";
 import TodoListItems from "./TodoListItems";
 import TodoForm from "./TodoForm";
+import { Header } from "./Header";
 
 function TodoApp() {
   const [itemToAdd, setItemToAdd] = useState("");
@@ -27,6 +28,7 @@ function TodoApp() {
 
   return (
     <>
+      <Header />
       <TodoForm
         addItem={addItem}
         itemToAdd={itemToAdd}
